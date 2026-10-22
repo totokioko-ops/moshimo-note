@@ -1,0 +1,31 @@
+:root{--bg:#f6f5f1;--card:#fff;--ink:#222;--sub:#667;--main:#2f6f62;--warn:#b3402a;--line:#e3e1d8}
+@media (prefers-color-scheme:dark){:root{--bg:#161a19;--card:#202625;--ink:#eee;--sub:#9aa;--main:#5fb5a2;--warn:#e8806a;--line:#323a38}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,"Hiragino Sans",sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+#app{max-width:640px;margin:0 auto;padding:16px}
+h1{font-size:22px;margin:8px 0 4px}h2{font-size:17px;margin:20px 0 8px}
+p.sub{color:var(--sub);margin:0 0 12px;font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+.warn{border-color:var(--warn);color:var(--warn);font-size:14px}
+label{display:block;font-size:13px;color:var(--sub);margin:10px 0 2px}
+input,textarea,select{width:100%;font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+textarea{min-height:80px}
+button{font:inherit;padding:11px 16px;border-radius:10px;border:1px solid var(--main);background:var(--main);color:#fff;margin:6px 6px 0 0}
+button.ghost{background:transparent;color:var(--main)}
+button.danger{background:transparent;color:var(--warn);border-color:var(--warn)}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tabs button{margin:0;padding:7px 12px;font-size:14px;background:transparent;color:var(--main)}
+.tabs button.on{background:var(--main);color:#fff}
+.item{cursor:pointer}
+.item b{display:block}.item span{color:var(--sub);font-size:14px}
+.total{font-size:20px;font-weight:700;color:var(--main)}
+.pf{margin:6px 0;font-size:14px;white-space:pre-wrap}.pf em{font-style:normal;color:var(--sub)}
+#print{display:none}
+@media print{
+  body{background:#fff;color:#000}
+  #app>*:not(#print){display:none!important}
+  #print{display:block!important}
+  button{display:none}
+  .card{break-inside:avoid;border-color:#999}
+}
